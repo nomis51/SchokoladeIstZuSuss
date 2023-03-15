@@ -14,8 +14,8 @@ dn (utfString) = username
 // the user id. coming from getUserInfo.php
 id (int) = userId
 
-// i believe it's the current client version (format x.x.x-yymmddx)
-// you can find it by connecting into the official game client and looking at the first websocket message sent
+// It's the current client version (format x.x.x-yymmddx)
+// you can find it by connecting into the official game client and looking at the second websocket message sent
 version (utfString) = clientVersion
 
 ------------------------------

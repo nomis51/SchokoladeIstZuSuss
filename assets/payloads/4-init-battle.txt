@@ -1,6 +1,8 @@
-while walking in grass, you eventually receive those messages: 
+// while walking in grass, you eventually receive those messages (the server init the battle) 
+// note that you can still move around and do other stuff, but ofc you can't generate a new battle while one is active
 
-RECEIVE:
+
+RECEIVE: (message that tells you a battle is happening)
 00000000: 8000 4e12 0003 0001 7012 0003 0001 7012  ..N.....p.....p.
 00000001: 0004 0001 7301 0100 0163 0100 0001 6e04  ....s....c....n.
 00000002: 0000 0013 0001 6f01 0000 0172 0400 0000  ......o....r....
@@ -11,7 +13,7 @@ RECEIVE:
 RECEIVE:
 some encrypted data
 
-RECEIVE:
+RECEIVE: (generic info about the encounter)
 00000000: 8000 b412 0003 0001 7012 0003 0001 7012  ........p.....p.
 00000001: 0002 0001 7208 0009 456e 636f 756e 7465  ....r...Encounte
 00000002: 7200 0464 6174 6112 000a 0002 7478 0400  r..data.....tx..
@@ -25,7 +27,7 @@ RECEIVE:
 0000000a: 0000 0001 6308 0004 6d6f 7665 0001 6103  ....c...move..a.
 0000000b: 000d 0001 6302 01                        ....c..
 
-RECEIVE:
+RECEIVE: (the room newly created for the battle)
 00000000: 8000 9612 0003 0001 7012 0003 0001 7012  ........p.....p.
 00000001: 0001 0004 6461 7461 1200 0300 0862 6174  ....data.....bat
 00000002: 746c 6549 6408 0024 3661 3161 6364 3633  tleId..$6a1acd63
@@ -37,7 +39,7 @@ RECEIVE:
 00000008: 7474 6c65 2e72 6f6f 6d52 6561 6479 0001  ttle.roomReady..
 00000009: 6103 000d 0001 6302 01                   a.....c..
 
-RECEIVE:
+RECEIVE: (your pokemon setup)
 00000000: 8003 6c12 0003 0001 7012 0003 0001 7012  ..l.....p.....p.
 00000001: 0001 0007 7265 7175 6573 7408 0327 7c72  ....request..'|r
 00000002: 6571 7565 7374 7c7b 2273 6964 6522 3a7b  equest|{"side":{
@@ -94,7 +96,7 @@ RECEIVE:
 00000035: 0800 1162 6174 746c 652e 7369 6d52 6571  ...battle.simReq
 00000036: 7565 7374 0001 6103 000d 0001 6302 01    uest..a.....c..
 
-RECEIVE:
+RECEIVE: (pretty sure it feed the new battle log, we have to parse it to know what's happening)
 00000000: 8002 e512 0003 0001 7012 0003 0001 7012  ........p.....p.
 00000001: 0002 0007 7265 7175 6573 7408 028e 7c74  ....request...|t
 00000002: 3a7c 312e 3637 3833 3733 3331 3945 390a  :|1.678373319E9.

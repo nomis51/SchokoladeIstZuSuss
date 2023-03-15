@@ -1,0 +1,13 @@
+// The same extension function is used to do everything (use move, use item, run, etc.)
+// To use a move you do : "move X" where X is between 1 and 4
+// To use an item you do : "bag X Y" where X is the item ID and Y the amount I believe
+// To run away you do : "run"
+
+
+SEND:
+00000000: 8000 4a12 0003 0001 6302 0100 0161 0300  ..J.....c....a..
+00000001: 0d00 0170 1200 0300 0163 0800 1162 6174  ...p.....c...bat
+00000002: 746c 652e 6d61 6b65 4368 6f69 6365 0001  tle.makeChoice..
+00000003: 7204 0009 56f5 0001 7012 0001 0006 6368  r...V...p.....ch
+00000004: 6f69 6365 0800 066d 6f76 6520 31         oice...move 1
+

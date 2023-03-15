@@ -1,0 +1,20 @@
+// happens when you call connect()
+// you must alter the client code to replace the clientDetails with "Unity WebGL" so it's not suspicious and tuse the clientVersion with "1.7.17" (use NPM to get the right version) (Version might change in future. Currently the latest is 1.7.20, but the game uses 1.7.17)
+
+// You receive a refresh token "tk"
+// You can let smartfox client handle that with the ping/pong function (aka lagMonitor)
+
+------------------
+
+SEND:
+00000000: 8000 3412 0003 0001 6302 0000 0161 0300  ..4.....c....a..
+00000001: 0000 0170 1200 0200 0361 7069 0800 0631  ...p.....api...1
+00000002: 2e37 2e31 3700 0263 6c08 000b 556e 6974  .7.17..cl...Unit
+00000003: 7920 5765 6247 4c                        y WebGL
+
+RECEIVE:
+00000000: 8000 4d12 0003 0001 7012 0003 0002 6374  ..M.....p.....ct
+00000001: 0400 0004 0000 026d 7304 0007 a120 0002  .......ms.... ..
+00000002: 746b 0800 2039 3366 3163 3839 6635 6565  tk.. xxxxxxxxxxx
+00000003: 3936 6439 3533 6239 6138 6163 3861 6162  xxxxxxxxxxxxxxxx
+00000004: 3135 3630 6100 0161 0300 0000 0163 0200  xxxxx..a.....c..

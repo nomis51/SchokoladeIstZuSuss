@@ -1,0 +1,28 @@
+.map {
+	width: fit-content;
+	height: auto;
+	border: 1px solid #000;
+}
+
+.cell {
+	min-width: 32px;
+	width: 100%;
+	min-height: 32px;
+	height: auto;
+}
+
+.walk {
+	background-image: url(assets/walk.png);
+}
+
+.block {
+	background-image: url(assets/tree.png);
+}
+
+.grass {
+	background-image: url(assets/grass.png);
+}
+
+.player {
+	background-color: url(assets/player.png);
+}

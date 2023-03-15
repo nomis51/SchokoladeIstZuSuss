@@ -1,0 +1,15 @@
+{
+	"id": 6,
+	"name": "Professor Oak's Lab",
+	"exits": [
+		{
+			"x": 11,
+			"y": 16,
+			"to": {
+				"mapId": 1,
+				"x": 11,
+				"y": 16
+			}
+		}
+	]
+}

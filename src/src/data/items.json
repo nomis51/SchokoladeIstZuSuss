@@ -1,0 +1,12 @@
+[
+	{
+		"id": 11,
+		"name": "Small potion",
+		"useOperation": -1
+	},
+	{
+		"id": 9,
+		"name": "Pokeball",
+		"useOperation": 1
+	}
+]

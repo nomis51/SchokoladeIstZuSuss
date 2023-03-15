@@ -1,0 +1,50 @@
+// it's a custom login extension (see smartfox 2x documentation) with a bunch of arguments
+
+// you pass the lowered case username as the username, null as the password, a SFSObject containing the following arguments and null as the zone (since you specify it in the SmartFox instance)
+
+// hashed password coming from getUserInfo.php
+password (utfString) = hashedPassword
+
+// no idea what is it yet
+rs (bool) = true
+
+// username unaltered. coming from getUserInfo.php
+dn (utfString) = username
+
+// the user id. coming from getUserInfo.php
+id (int) = userId
+
+// i believe it's the current client version (format x.x.x-yymmddx)
+// you can find it by connecting into the official game client and looking at the first websocket message sent
+version (utfString) = clientVersion
+
+------------------------------
+
+SEND: (login message)
+00000000: 8000 b412 0003 0001 6302 0000 0161 0300  ........c....a..
+00000001: 0100 0170 1200 0400 027a 6e08 0007 4465  ...p.....zn...De
+00000002: 765a 6f6e 6500 0275 6e08 000b 6a6f 686e  vZone..un...xxxx
+00000003: 6365 6e61 3737 3100 0270 7708 0000 0001  xxxxxxx..pw.....
+00000004: 7012 0005 0008 7061 7373 776f 7264 0800  p.....password..
+00000005: 2838 3739 6239 3963 3963 6562 3963 3238  xxxxxxxxxxxxxxxx
+00000006: 6632 6361 3134 6536 6639 6461 6662 3938  xxxxxxxxxxxxxxxx
+00000007: 3662 6133 6138 6264 6300 0272 7301 0100  xxxxxxxxx..rs...
+00000008: 0264 6e08 000b 4a6f 686e 4365 6e61 3737  .dn...xxxxxxxxxx
+00000009: 3100 0269 6405 0000 0000 00xx xxxx 0007  x..id......'p...
+0000000a: 7665 7273 696f 6e08 000d 312e 302e 312d  version...1.0.1-
+0000000b: 3233 3033 3034 61                        230304a
+
+ERRORS:
+113 = bad request (might be clientVersion, password, username or the whole structure that is wrong)
+116 = servers down or unavailable
+117 = already logged in somewhere else
+
+RECEIVE:
+// a big encrypted message containing user information.
+// let smartfox client do the heavy lifting here and grab infos in the SFSEvent related to that
+
+SEND: (ready command to spawn in game)
+00000000: 8000 2f12 0003 0001 6302 0100 0161 0300  ../.....c....a..
+00000001: 0d00 0170 1200 0300 0163 0800 0763 2e72  ...p.....c...c.r
+00000002: 6561 6479 0001 7204 ffff ffff 0001 7012  eady..r.......p.
+00000003: 0000      

@@ -1,0 +1,17 @@
+{
+	"serverInfo": {
+		"host": "pokemon-planet.com",
+		"port": 8443,
+		"useSsl": true,
+		"zone": "DevZone",
+		"rs": true,
+		"version": "1.0.1-230313a"
+	},
+	"userInfo": {
+		"username": "",
+		"hashedPassword": "",
+		"id": 0
+	},
+	"maxConnectionWaitingTime": 30,
+	"maxLoginWaitingTime": 10
+}

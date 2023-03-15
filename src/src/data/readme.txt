@@ -1,4 +1,5 @@
 You can look at the hex code to figure out each fields and their data types and sometimes their values aswell.
+Look at the second hex block to know if your message is right or not. If value differ, it means your message is wrong.
 
 "zone" is currently DevZone. It's a utf string. It's the SmartFox server "lobby" you log in. Just look at the 2nd message sent on the Unity client websocket connection to know what zone needs to be provided.
 
